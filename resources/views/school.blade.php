@@ -16,7 +16,7 @@
                             <p>{{$building->name}}</p>
                         @endforeach
                     @endforeach
-
+                    test
                 </div>
             </div>
         </div>
