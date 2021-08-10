@@ -20,4 +20,36 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+        var shedules = {!! json_encode($shedules) !!};
+
+        console.log(shedules);
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          slotMinTime: '08:00',
+          slotMaxTime: '20:00',
+          headerToolbar: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+          },
+          businessHours: {
+              // days of week. an array of zero-based day of week integers (0=Sunday)
+              daysOfWeek: [ 1, 2, 3, 4, 5 ],
+
+              startTime: '08:00', // a start time
+              endTime: '20:00', // an end time
+          },
+          events:[shedules]
+          });
+
+          calendar.render();
+      });
+  </script>
 </x-app-layout>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Subject;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,6 +19,30 @@ class CreateSubjectsTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
+        $data =  array(
+            [
+                'name' => 'Física Aplicada à Computação',
+            ],
+            [
+                'name' => 'Matemática Discreta',
+            ],
+            [
+                'name' => 'Programação Orientada por Objetos',
+            ],
+            [
+                'name' => 'Sistemas Digitais',
+            ],
+            [
+                'name' => 'Databases 1',
+            ],
+        );
+
+        foreach ($data as $datum){
+            $entry = new Subject();
+            $entry->name =$datum['name'];
+            $entry->save();
+        }
     }
 
     /**

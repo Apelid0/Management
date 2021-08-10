@@ -15,10 +15,12 @@ class CreateEnrolSubjectsTable extends Migration
     {
         Schema::create('enrol_subjects', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('course_content');
-            $table->foreignId('enrol');
+            $table->foreignId('course_content_id');
+            $table->foreignId('enrol_id');
             $table->timestamps();
         });
+
+        
     }
 
     /**

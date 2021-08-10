@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Course;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,6 +19,24 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
+        $data =  array(
+            [
+                'name' => 'Engenharia Informática',
+            ],
+            [
+                'name' => 'Desporto',
+            ],
+            [
+                'name' => 'Enfermagem',
+            ],
+        );
+
+        foreach ($data as $datum){
+            $entry = new Course();
+            $entry->name =$datum['name'];
+            $entry->save();
+        }
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\SchoolCourse;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,6 +20,20 @@ class CreateSchoolCoursesTable extends Migration
             $table->foreignId('course_id');
             $table->timestamps();
         });
+
+        $data =  array(
+            [
+                'school_id' => '1',
+                'course_id' => '1',
+            ],
+        );
+
+        foreach ($data as $datum){
+            $entry = new SchoolCourse();
+            $entry->school_id =$datum['school_id'];
+            $entry->course_id =$datum['course_id'];
+            $entry->save();
+        }
     }
 
     /**
