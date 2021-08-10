@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\TakeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,8 @@ Route::get('/dashboard', function () {return view('dashboard');})->middleware(['
 //
 Route::get('/school', [SchoolController::class, 'index'])->name('school.index');
 
+//Calendar
+Route::get('/calendar', [TakeController::class, 'index'])->name('calendar.index');
 
 
 

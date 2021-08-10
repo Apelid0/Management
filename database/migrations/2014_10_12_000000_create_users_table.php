@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Hash;
 
 class CreateUsersTable extends Migration
 {
@@ -29,6 +31,27 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        $data =  array(
+            [
+                'name' => 'mario',
+                'email' => 'mario@mail.com',
+                'password' => 'qwerty123',
+            ],
+            [
+                'name' => 'joão',
+                'email' => 'joão@mail.com',
+                'password' => 'qwerty123',
+            ],
+        );
+
+        foreach ($data as $datum){
+            $entry = new User();
+            $entry->name =$datum['name'];
+            $entry->email =$datum['email'];
+            $entry->password = Hash::make($datum['password']);
+            $entry->save();
+        }
     }
 
     /**

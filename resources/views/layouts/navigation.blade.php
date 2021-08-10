@@ -23,6 +23,13 @@
                         {{ __('Schools') }}
                     </x-nav-link>
                 </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('calendar.index')" :active="request()->routeIs('calendar.index')">
+                        {{ __('Calendar') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
