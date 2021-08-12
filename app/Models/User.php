@@ -14,8 +14,8 @@ class User extends Authenticatable
 
 
     //Eloquent Relationships
-    public function teache(){
-        return $this->hasMany(Teache::class);
+    public function work(){
+        return $this->hasMany(Work::class);
     }
 
     public function enrol(){

@@ -14,17 +14,19 @@ class TakeController extends Controller
         $users = auth()->user();
 
         $enrol_subjects = $users->enrol[0]->enrol_subject;
-
+        $teste = $enrol_subjects[0]->course_content->school_course->course->name;
+        print($teste);
         foreach ($enrol_subjects as $enrol_subjects_list) {
             //print($enrol_subjects_list);
             $subject_name = $enrol_subjects_list->course_content->subject;
+
             //nome das disciplinas
-            //print($subject_name->name);
+            print($subject_name->name);
 
             $user_schedule = $enrol_subjects_list->take;
             foreach ($user_schedule as $schedule) {
                 //informação da aula
-                print($schedule->shift->start);
+                //print($schedule->shift->start);
 
                 $events->prepend([
                     'title' => $schedule->shift->description,
@@ -34,7 +36,7 @@ class TakeController extends Controller
                 ]);
             }
         }
-        var_dump($events);
+        //var_dump($events);
 
 
         $shedules = [

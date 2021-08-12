@@ -37,3 +37,21 @@ public function index(){
                             <p>{{$building->name}}</p>
                         @endforeach
                     @endforeach
+
+
+
+
+$shedules = [
+            [
+                'title' => 'trabalhar',
+                'startTime' => '15:30:00',
+                'endTime' => '16:00:00',
+                'daysOfWeek' => '3'
+            ],
+            [
+                'title' => 'trabalhar',
+                    'startTime' => '15:30:00',
+                    'endTime' => '16:00:00',
+                    'daysOfWeek' => '4'
+            ]
+        ];

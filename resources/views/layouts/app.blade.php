@@ -15,9 +15,7 @@
         <!-- STYLES -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <!-- Calendar Style -->
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css">
-
 
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/locales-all.min.js"></script>
@@ -25,7 +23,7 @@
         <script src="{{ asset('js/appp.js') }}" defer></script>
         <!-- Calendar Scripts -->
         <script src="{{ asset('js/calendar/main.js') }}" defer></script>
-        
+
 
 
     </head>

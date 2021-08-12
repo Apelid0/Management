@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\TakeController;
+use App\Http\Controllers\TeacheController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,17 +17,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//index login
+//Landing Page login
 Route::get('/', function () {return view('auth/login');});
 
-//dashboard
-Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth'])->name('dashboard');
+//Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-//
+//School
 Route::get('/school', [SchoolController::class, 'index'])->name('school.index');
 
 //Calendar
 Route::get('/calendar', [TakeController::class, 'index'])->name('calendar.index');
+
+//Teacher
+Route::get('/teacher', [TeacheController::class, 'index'])->name('teacher.index');
+Route::post('/teacher', [TeacheController::class, 'create_teacher_subject']);
 
 
 require __DIR__.'/auth.php';

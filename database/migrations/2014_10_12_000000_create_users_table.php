@@ -35,12 +35,32 @@ class CreateUsersTable extends Migration
         $data =  array(
             [
                 'name' => 'mario',
+                'role' => 'student',
                 'email' => 'mario@mail.com',
                 'password' => 'qwerty123',
             ],
             [
                 'name' => 'joão',
+                'role' => 'student',
                 'email' => 'joão@mail.com',
+                'password' => 'qwerty123',
+            ],
+            [
+                'name' => 'Marta',
+                'role' => 'teacher',
+                'email' => 'marta@mail.com',
+                'password' => 'qwerty123',
+            ],
+            [
+                'name' => 'Lucas',
+                'role' => 'teacher',
+                'email' => 'lucas@mail.com',
+                'password' => 'qwerty123',
+            ],
+            [
+                'name' => 'Barbara',
+                'role' => 'teacher',
+                'email' => 'barbara@mail.com',
                 'password' => 'qwerty123',
             ],
         );
@@ -48,6 +68,7 @@ class CreateUsersTable extends Migration
         foreach ($data as $datum){
             $entry = new User();
             $entry->name =$datum['name'];
+            $entry->role =$datum['role'];
             $entry->email =$datum['email'];
             $entry->password = Hash::make($datum['password']);
             $entry->save();
