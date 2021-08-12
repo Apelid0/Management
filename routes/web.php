@@ -28,7 +28,4 @@ Route::get('/school', [SchoolController::class, 'index'])->name('school.index');
 Route::get('/calendar', [TakeController::class, 'index'])->name('calendar.index');
 
 
-
-
-
 require __DIR__.'/auth.php';

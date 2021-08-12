@@ -1,0 +1,39 @@
+                    <p></p>
+                    {{$users->enrol}}
+                    <p></p>
+                    @foreach ($users->enrol as $enrol)
+                        <p>{{$enrol->enrol_subject}}</p>
+
+                        @foreach ($enrol->enrol_subject as $enrol_subject)
+                            <p>{{$enrol_subject->course_content}}</p>
+                        @endforeach
+                    @endforeach
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public function index(){
+        $schools = School::all();
+
+        return view('school', compact('schools'));
+    }
+
+
+
+@foreach ($schools as $school)
+                        <p>{{$school->name}}</p>
+                        @foreach ($school->building as $building)
+                            <p>{{$building->name}}</p>
+                        @endforeach
+                    @endforeach

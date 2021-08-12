@@ -15,12 +15,11 @@ class EnrolSubject extends Model
     }
 
     //Eloquent Relationships
-    public function course_contente(){
+    public function course_content(){
         return $this->belongsTo(CourseContent::class);
     }
 
     public function take(){
         return $this->hasMany(Take::class);
     }
-
 }
