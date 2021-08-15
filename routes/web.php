@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\TakeController;
 use App\Http\Controllers\TeacheController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,10 @@ Route::get('/calendar', [TakeController::class, 'index'])->name('calendar.index'
 //Teacher
 Route::get('/teacher', [TeacheController::class, 'index'])->name('teacher.index');
 Route::post('/teacher', [TeacheController::class, 'create_teacher_subject']);
+
+//Shift
+Route::get('/shift', [ShiftController::class, 'index'])->name('shift.index');
+Route::post('/shift', [ShiftController::class, 'create_shift']);
 
 
 require __DIR__.'/auth.php';

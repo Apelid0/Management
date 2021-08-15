@@ -10,7 +10,7 @@
             </div>
             <!--BODY-->
             <div class="modal-body">
-                ...
+                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

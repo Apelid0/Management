@@ -38,6 +38,13 @@
                         {{ __('Teacher') }}
                     </x-nav-link>
                 </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('shift.index')" :active="request()->routeIs('shift.index')">
+                        {{ __('Shift') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

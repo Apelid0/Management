@@ -18,6 +18,7 @@ class CreateTakesTable extends Migration
             $table->id();
             $table->foreignId('shift_id');
             $table->foreignId('enrol_subject_id');
+            $table->string('accepted');
             $table->timestamps();
         });
 
@@ -25,14 +26,17 @@ class CreateTakesTable extends Migration
             [
                 'shift_id' => '1',
                 'enrol_subject_id' => '1',
+                'accepted' => 'true',
             ],
             [
                 'shift_id' => '4',
                 'enrol_subject_id' => '2',
+                'accepted' => 'true',
             ],
             [
                 'shift_id' => '5',
                 'enrol_subject_id' => '3',
+                'accepted' => 'false',
             ],
         );
 
@@ -40,6 +44,7 @@ class CreateTakesTable extends Migration
             $entry = new Take();
             $entry->shift_id =$datum['shift_id'];
             $entry->enrol_subject_id =$datum['enrol_subject_id'];
+            $entry->accepted =$datum['accepted'];
             $entry->save();
         }
     }
