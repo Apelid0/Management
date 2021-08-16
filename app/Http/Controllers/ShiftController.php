@@ -48,6 +48,32 @@ class ShiftController extends Controller
 
         }
 
+
+
+
+        //buscar disciplinas
+        foreach ($employee_employed as $employee_school) {
+            $school_courses = $employee_school->school->school_course;
+
+            foreach($school_courses as $school_course){
+                $course = $school_course->course;
+                //print($course->name);
+            }
+
+            foreach($school_courses as $course_content){
+                $courses_content = $course_content->course_content;
+
+                //print($courses_content);
+
+                foreach($courses_content as $subjects){
+                    $subjects = $subjects->subject->name;
+
+                    print($subjects);
+                }
+            }
+
+        }
+
         return view('shift', compact('school_courses', 'events', 'course_name'));
     }
 
@@ -77,7 +103,7 @@ class ShiftController extends Controller
                 if($course_name == $request->course){
                     $course_subject = $courses->course_content;
                     //print($course_subject);
-                    print("sim");
+                    //print("sim");
                     foreach ($course_subject as $subject_shift) {
                         $shifts = $subject_shift->shift;
                         foreach ($shifts as $shift) {
@@ -91,12 +117,12 @@ class ShiftController extends Controller
 
                     }
                 }else{
-                    print("n");
+                    //print("n");
                 }
             }
         }
-        print($events);
-        
+        //print($events);
+
         return view('shift', compact('school_courses', 'events', 'course_name'));
 
     }
