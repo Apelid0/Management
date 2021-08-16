@@ -36,6 +36,15 @@ class CreateSubjectsTable extends Migration
             [
                 'name' => 'Databases 1',
             ],
+            [
+                'name' => 'Estatística Aplicada',
+            ],
+            [
+                'name' => 'Desenvolvimento e Aprendizagem Motora',
+            ],
+            [
+                'name' => 'Anatomia Funcional do Aparelho Locomotor',
+            ],
         );
 
         foreach ($data as $datum){

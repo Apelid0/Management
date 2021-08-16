@@ -37,6 +37,6 @@ Route::post('/teacher', [TeacheController::class, 'create_teacher_subject']);
 //Shift
 Route::get('/shift', [ShiftController::class, 'index'])->name('shift.index');
 Route::post('/shift', [ShiftController::class, 'create_shift']);
-
+Route::post('/shift/search', [ShiftController::class, 'search'])->name('shift.search');
 
 require __DIR__.'/auth.php';

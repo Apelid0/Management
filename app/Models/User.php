@@ -22,6 +22,10 @@ class User extends Authenticatable
         return $this->hasMany(Enrol::class);
     }
 
+    public function employed(){
+        return $this->hasMany(Employed::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

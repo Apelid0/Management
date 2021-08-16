@@ -63,6 +63,18 @@ class CreateUsersTable extends Migration
                 'email' => 'barbara@mail.com',
                 'password' => 'qwerty123',
             ],
+            [
+                'name' => 'Jorge',
+                'role' => 'employee',
+                'email' => 'jorge@mail.com',
+                'password' => 'qwerty123',
+            ],
+            [
+                'name' => 'Sara',
+                'role' => 'employee',
+                'email' => 'sara@mail.com',
+                'password' => 'qwerty123',
+            ],
         );
 
         foreach ($data as $datum){
