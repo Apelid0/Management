@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,6 +29,20 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('calendar.index')" :active="request()->routeIs('calendar.index')">
                         {{ __('Calendar') }}
+                    </x-nav-link>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('teacher.index')" :active="request()->routeIs('teacher.index')">
+                        {{ __('Teacher') }}
+                    </x-nav-link>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('shift.index')" :active="request()->routeIs('shift.index')">
+                        {{ __('Shift') }}
                     </x-nav-link>
                 </div>
             </div>

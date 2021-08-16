@@ -11,10 +11,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+                    <div id='calendar'></div>
 
-
-                        <div id='calendar'></div>
-
+                    {{$users->name}}
+                    <p></p>
 
                 </div>
             </div>
@@ -23,7 +23,7 @@
 
 
     <script>
-        var shedules = {!! json_encode($shedules) !!};
+        var shedules = {!! json_encode($events) !!};
 
         console.log(shedules);
 
@@ -46,7 +46,7 @@
               startTime: '08:00', // a start time
               endTime: '20:00', // an end time
           },
-          events:[shedules]
+          events:shedules
           });
 
           calendar.render();

@@ -12,7 +12,7 @@ class Teache extends Model
 
     //Eloquent Relationships
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Work::class);
     }
 
     public function course_content(){

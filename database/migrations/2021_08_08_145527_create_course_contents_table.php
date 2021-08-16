@@ -34,7 +34,7 @@ class CreateCourseContentsTable extends Migration
                 'curricular_year' => '2020-2021',
                 'academic_year' => '1',
                 'credits' => '6',
-                'status' => 'on',
+                'status' => 'true',
             ],
             [
                 'subject_id' => '2',
@@ -43,7 +43,7 @@ class CreateCourseContentsTable extends Migration
                 'curricular_year' => '2020-2021',
                 'academic_year' => '1',
                 'credits' => '6',
-                'status' => 'on',
+                'status' => 'true',
             ],
             [
                 'subject_id' => '3',
@@ -52,7 +52,34 @@ class CreateCourseContentsTable extends Migration
                 'curricular_year' => '2020-2021',
                 'academic_year' => '1',
                 'credits' => '6',
-                'status' => 'on',
+                'status' => 'true',
+            ],
+            [
+                'subject_id' => '6',
+                'school_course_id' => '2',
+                'semester' => '1',
+                'curricular_year' => '2020-2021',
+                'academic_year' => '1',
+                'credits' => '5',
+                'status' => 'true',
+            ],
+            [
+                'subject_id' => '7',
+                'school_course_id' => '2',
+                'semester' => '1',
+                'curricular_year' => '2020-2021',
+                'academic_year' => '1',
+                'credits' => '5',
+                'status' => 'true',
+            ],
+            [
+                'subject_id' => '8',
+                'school_course_id' => '2',
+                'semester' => '1',
+                'curricular_year' => '2020-2021',
+                'academic_year' => '1',
+                'credits' => '3',
+                'status' => 'true',
             ],
         );
 

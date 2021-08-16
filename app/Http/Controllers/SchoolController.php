@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class SchoolController extends Controller
 {
     public function index(){
-        $schools = School::all();
+        $schools = School::first();
 
-        return view('school', compact('schools'));
+        return view('school', compact('schools' ));
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
-use App\Models\SchoolCourse;
+use App\Models\Employed;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSchoolCoursesTable extends Migration
+class CreateEmployedsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,28 +14,29 @@ class CreateSchoolCoursesTable extends Migration
      */
     public function up()
     {
-        Schema::create('school_courses', function (Blueprint $table) {
+        Schema::create('employeds', function (Blueprint $table) {
             $table->id();
             $table->foreignId('school_id');
-            $table->foreignId('course_id');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
+
 
         $data =  array(
             [
                 'school_id' => '1',
-                'course_id' => '1',
+                'user_id' => '6',
             ],
             [
                 'school_id' => '1',
-                'course_id' => '2',
+                'user_id' => '7',
             ],
         );
 
         foreach ($data as $datum){
-            $entry = new SchoolCourse();
+            $entry = new Employed();
             $entry->school_id =$datum['school_id'];
-            $entry->course_id =$datum['course_id'];
+            $entry->user_id =$datum['user_id'];
             $entry->save();
         }
     }
@@ -47,6 +48,6 @@ class CreateSchoolCoursesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('school_courses');
+        Schema::dropIfExists('employeds');
     }
 }
